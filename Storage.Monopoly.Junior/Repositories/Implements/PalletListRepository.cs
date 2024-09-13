@@ -3,7 +3,7 @@ using Storage.Monopoly.Junior.Repositories.Interfaces;
 
 namespace Storage.Monopoly.Junior.Repositories.Implements;
 
-public class PalletRepository : IPalletRepository
+public class PalletListRepository : IPalletRepository
 {
     private readonly HashSet<Pallet> _pallets = [];
     public void Add(Pallet pallet)
@@ -13,7 +13,7 @@ public class PalletRepository : IPalletRepository
 
     public void AddRange(HashSet<Pallet> pallets)
     {
-        foreach (var pallet in pallets)   
+        foreach (var pallet in pallets)
         {
             _pallets.Add(pallet);
         }

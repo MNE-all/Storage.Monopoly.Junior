@@ -4,11 +4,11 @@ using Storage.Monopoly.Junior.Repositories.Interfaces;
 using Storage.Monopoly.Junior.Services;
 
 // Domain-Model Layer
-IPalletRepository palletRepository = new PalletRepository();
+IPalletRepository palletRepository = new PalletListRepository();
 
-// Input 
+// Input
 DataGenerator dataGenerator = new ();
-palletRepository.AddRange(dataGenerator.GeneratePalletsWithBoxes(1500));
+palletRepository.AddRange(dataGenerator.GeneratePalletsWithBoxes(99999));
 
 
 // Output
