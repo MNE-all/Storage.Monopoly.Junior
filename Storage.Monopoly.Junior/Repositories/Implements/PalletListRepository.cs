@@ -31,7 +31,7 @@ public class PalletListRepository : IPalletRepository
         foreach (var group in list)
         {
             var orderedGroup = group.PalletGroup.OrderBy(p => (p.Weight + p.Boxes.Sum(b => b.Weight)));
-            groupedPallets.Add(group.PalletGroup.Key!.Value, orderedGroup.ToList());;
+            groupedPallets.Add(group.PalletGroup.Key!.Value, orderedGroup.ToList());
         }
 
         return groupedPallets;
