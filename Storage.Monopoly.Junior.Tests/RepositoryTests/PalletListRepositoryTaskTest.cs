@@ -2,12 +2,12 @@ using Storage.Monopoly.Junior.Models;
 using Storage.Monopoly.Junior.Repositories.Implements;
 using Storage.Monopoly.Junior.Repositories.Interfaces;
 
-namespace Storage.Monopoly.Junior.Tests;
+namespace Storage.Monopoly.Junior.Tests.RepositoryTests;
 
 /// <summary>
 /// Тестирование репозитория паллетов
 /// </summary>
-public class PalletListRepositoryTest
+public partial class PalletListRepositoryTest
 {
     private readonly IPalletRepository _palletRepository = new PalletListRepository();
 

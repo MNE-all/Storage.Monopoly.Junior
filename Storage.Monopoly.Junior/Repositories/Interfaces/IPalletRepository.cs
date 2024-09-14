@@ -2,6 +2,9 @@ using Storage.Monopoly.Junior.Models;
 
 namespace Storage.Monopoly.Junior.Repositories.Interfaces;
 
+/// <summary>
+/// Упрощенный интерфейс для работы с коллекцией паллетов
+/// </summary>
 public interface IPalletRepository
 {
     /// <summary>

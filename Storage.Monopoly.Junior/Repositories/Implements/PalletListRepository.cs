@@ -18,6 +18,9 @@ public class PalletListRepository : IPalletRepository
             _pallets.Add(pallet);
         }
     }
+
+    public Pallet? GetById(Guid palletId) => _pallets.FirstOrDefault(pallet => pallet.Id == palletId);
+
     public Dictionary<DateOnly, List<Pallet>> GroupAndSortByExpirationDateThanSortByWeight()
     {
         Dictionary<DateOnly, List<Pallet>> groupedPallets = new ();

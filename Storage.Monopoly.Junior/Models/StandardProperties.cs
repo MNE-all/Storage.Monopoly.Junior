@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Storage.Monopoly.Junior.Models;
 
 public abstract class StandardProperties
@@ -9,6 +11,7 @@ public abstract class StandardProperties
     /// <remarks>
     /// Данные указываются в сантиметрах
     /// </remarks>
+    [Range(0.1, 1000)]
     public double Width { get; set; }
     /// <summary>
     /// Длина
@@ -16,6 +19,7 @@ public abstract class StandardProperties
     /// <remarks>
     /// Данные указываются в сантиметрах
     /// </remarks>
+    [Range(0.1, 1000)]
     public double Length { get; set; }
     /// <summary>
     /// Высота
@@ -23,6 +27,7 @@ public abstract class StandardProperties
     /// <remarks>
     /// Данные указываются в сантиметрах
     /// </remarks>
+    [Range(0.1, 1000)]
     public double Height { get; set; }
     /// <summary>
     /// Вес
@@ -30,5 +35,6 @@ public abstract class StandardProperties
     /// <remarks>
     /// Данные указываются в килограммах
     /// </remarks>
+    [Range(0.1, 100)]
     public double Weight { get; set; }
 }
