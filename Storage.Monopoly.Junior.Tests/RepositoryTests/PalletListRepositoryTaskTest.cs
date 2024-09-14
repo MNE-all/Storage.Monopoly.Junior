@@ -7,7 +7,7 @@ namespace Storage.Monopoly.Junior.Tests.RepositoryTests;
 /// <summary>
 /// Тестирование репозитория паллетов
 /// </summary>
-public partial class PalletListRepositoryTest
+public class PalletListRepositoryTest
 {
     private readonly IPalletRepository _palletRepository = new PalletListRepository();
 

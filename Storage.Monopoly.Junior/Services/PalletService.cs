@@ -9,22 +9,25 @@ public class PalletService(IPalletRepository palletRepository)
 {
     public void AddRange(HashSet<Pallet> pallets)
     {
-        PalletValidator validator = new();
-
-        foreach (var pallet in pallets)
+        foreach (var failure in pallets.Select(Add).OfType<List<ValidationFailure>>().SelectMany(errors => errors))
         {
-            ValidationResult result = validator.Validate(pallet);
-            if (result.IsValid)
-            {
-                palletRepository.Add(pallet);
-            }
-            else
-            {
-                foreach(var failure in result.Errors)
-                {
-                    Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
-                }
-            }
+            Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " +
+                              failure.ErrorMessage);
         }
+    }
+
+    public List<ValidationFailure>? Add(Pallet pallet)
+    {
+        PalletValidator validator = new();
+        ValidationResult result = validator.Validate(pallet);
+        if (result.IsValid)
+        {
+            palletRepository.Add(pallet);
+        }
+        else
+        {
+            return result.Errors;
+        }
+        return null;
     }
 }
